@@ -1,0 +1,18 @@
+body {
+  background-color: red;
+}
+body p {
+  margin: 0;
+}
+
+.wishlistBanner {
+  -moz-columns: 4;
+       columns: 4;
+  background: blue;
+}
+
+.wishlistContainer .wishlistRow {
+  position: relative;
+  -moz-columns: 4;
+       columns: 4;
+}/*# sourceMappingURL=style.css.map */
