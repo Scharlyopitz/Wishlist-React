@@ -1,19 +1,14 @@
-import { useState } from "react";
-
 export default function Wishlist({ list, setList }) {
   return (
     <div className="wishlistContainer">
       {list.map((obj, idx) => {
-        // const [itemId, setItemId] = useState("");
+        function deleteBook(titleValue) {
+          const filteredList = list.filter((item) => {
+            return item.titleValue !== titleValue;
+          });
 
-        // function deleteBook(idx) {
-        //   const filteredList = list.filter((item) => {
-        //     // console.log(idx);
-        //     // return item.isbn !== idx;
-        //   });
-
-        //   // setList(filteredList);
-        // }
+          setList(filteredList);
+        }
 
         return (
           <div className="wishlistRow" key={idx} data-id={idx}>
@@ -24,10 +19,9 @@ export default function Wishlist({ list, setList }) {
             <p>{obj.descriptionValue}</p>
             <button
               className="delete"
-              // onClick={(e) => {
-              //   deleteBook(idx), setItemId(e.target.dataset.btn);
-              // }}
-              data-btn={idx}
+              onClick={(e) => {
+                deleteBook(obj.titleValue);
+              }}
             >
               L
             </button>
