@@ -1,7 +1,18 @@
-export default function Wishlist({ list }) {
+import { useState } from "react";
+
+export default function Wishlist({ list, setList }) {
   return (
     <div className="wishlistContainer">
       {list.map((obj, idx) => {
+        // const deleteBook = (isbn) => {
+        //   const filteredList = list.filter((item, index) => {
+        //     console.log(item);
+        //     // return item.isbn !== isbn;
+        //   });
+        //   // setList(filteredList);
+        // };
+
+        const [itemId, setItemId] = useState("");
         return (
           <div className="wishlistRow" key={idx} data-id={idx}>
             <p>{obj.titleValue}</p>
@@ -11,7 +22,9 @@ export default function Wishlist({ list }) {
             <p>{obj.descriptionValue}</p>
             <button
               className="delete"
-              onClick={(e) => console.log(e.target.dataset.btn)}
+              onClick={(e) => {
+                console.log(e.target.dataset.btn);
+              }}
               data-btn={idx}
             >
               L

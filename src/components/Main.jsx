@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WishlistBanner from "./WishlistBanner";
 import Wishlist from "./Wishlist";
 
@@ -7,13 +7,26 @@ export default function Main() {
   const [linkValue, setLinkValue] = useState("");
   const [descriptionValue, setDescriptionValue] = useState("");
 
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(getDatafromLS);
 
   function ClearInput() {
     setTitleValue("");
     setLinkValue("");
     setDescriptionValue("");
   }
+
+  function getDatafromLS() {
+    const data = localStorage.getItem("item");
+    if (data) {
+      return JSON.parse(data);
+    } else {
+      return [];
+    }
+  }
+
+  useEffect(() => {
+    localStorage.setItem("item", JSON.stringify(list));
+  }, [list]);
 
   function Error() {
     if (titleValue == "" || linkValue == "" || descriptionValue == "") {
@@ -66,7 +79,7 @@ export default function Main() {
         />
       </form>
       <WishlistBanner />
-      <Wishlist list={list} />
+      <Wishlist list={list} setList={setList} />
     </>
   );
 }
