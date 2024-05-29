@@ -1,6 +1,7 @@
 .wishlistContainer {
-  height: 50vh;
+  height: 30vh;
   overflow: scroll;
+  overflow-x: hidden;
   text-align: start;
 
   .wishlistRow {

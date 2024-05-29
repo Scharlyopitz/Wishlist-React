@@ -7,6 +7,7 @@
 
 body {
   text-align: center;
+  height: 100vh;
 }
 body,
 body input {
@@ -27,8 +28,9 @@ body p {
 }
 
 .wishlistContainer {
-  height: 50vh;
+  height: 30vh;
   overflow: scroll;
+  overflow-x: hidden;
   text-align: start;
 }
 .wishlistContainer .wishlistRow {
@@ -56,7 +58,7 @@ body p {
 }
 
 header {
-  margin-top: 40px;
+  padding-top: 40px;
 }
 header span {
   font-size: 15vw;
