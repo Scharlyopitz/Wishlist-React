@@ -4,7 +4,11 @@
     columns: 4;
   }
 
-  //   .delete {
-
-  //   }
+  .delete {
+    background: $Red;
+    color: $White;
+    padding: 4px;
+    width: 30px;
+    display: inline-block;
+  }
 }

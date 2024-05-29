@@ -27,6 +27,13 @@ body p {
   -moz-columns: 4;
        columns: 4;
 }
+.wishlistContainer .delete {
+  background: #ff0000;
+  color: #ffffff;
+  padding: 4px;
+  width: 30px;
+  display: inline-block;
+}
 
 header span {
   font-size: 15vw;

@@ -17,14 +17,14 @@ export default function Wishlist({ list, setList }) {
                 clique
               </a>
               <p>{obj.descriptionValue}</p>
-              <button
+              <span
                 className="delete"
                 onClick={() => {
                   deleteBook(obj.titleValue);
                 }}
               >
-                L
-              </button>
+                X
+              </span>
             </div>
           );
         })}
