@@ -85,7 +85,7 @@ export default function Main() {
           style={{
             background:
               (Message === ErrorMsg && "#ff0000") ||
-              (Message === ValidMsg && "008000"),
+              (Message === ValidMsg && "#008000"),
           }}
           type="submit"
           value={Message}
