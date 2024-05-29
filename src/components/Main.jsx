@@ -38,7 +38,7 @@ export default function Main() {
   }
 
   return (
-    <>
+    <main>
       <form action="">
         <div className="title">
           <label htmlFor="title">Title</label>
@@ -80,6 +80,6 @@ export default function Main() {
       </form>
       <WishlistBanner />
       <Wishlist list={list} setList={setList} />
-    </>
+    </main>
   );
 }
