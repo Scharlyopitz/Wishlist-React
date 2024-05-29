@@ -1,11 +1,17 @@
 .wishlistContainer {
-  padding-left: 10px;
   text-align: start;
+
   .wishlistRow {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    padding: 10px;
     border-bottom: 1px solid $Grey;
-    padding: 10px 0;
-    position: relative;
-    columns: 4;
+
+    &:nth-child(odd) {
+      background-color: $LightGrey;
+    }
   }
 
   .delete {

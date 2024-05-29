@@ -17,24 +17,28 @@ body p {
 }
 
 .wishlistBanner {
-  -moz-columns: 4;
-       columns: 4;
   padding: 10px;
   border-bottom: 1px solid #b4b4b4;
   border-top: 1px solid #b4b4b4;
   text-align: start;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
 }
 
 .wishlistContainer {
-  padding-left: 10px;
   text-align: start;
 }
 .wishlistContainer .wishlistRow {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  padding: 10px;
   border-bottom: 1px solid #b4b4b4;
-  padding: 10px 0;
-  position: relative;
-  -moz-columns: 4;
-       columns: 4;
+}
+.wishlistContainer .wishlistRow:nth-child(odd) {
+  background-color: #eeeeee;
 }
 .wishlistContainer .delete {
   background: #ff0000;
