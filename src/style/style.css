@@ -27,4 +27,12 @@ body p {
   position: relative;
   -moz-columns: 4;
        columns: 4;
+}
+
+header span {
+  font-size: 15vw;
+  font-weight: 100;
+}
+header span:nth-child(2) {
+  color: #088fbc;
 }/*# sourceMappingURL=style.css.map */
