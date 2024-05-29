@@ -1,0 +1,37 @@
+main {
+  padding: 0 10px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+    }
+
+    label {
+      margin: 5px 0;
+    }
+
+    input {
+      border: 1px solid $Grey;
+      outline: none;
+      padding: 10px;
+      font-size: 100%;
+
+      &[type="text"] {
+        outline: none;
+        height: 35px;
+        font-size: 100%;
+      }
+
+      &[type="submit"] {
+        margin: 10px 0;
+        background-color: $Blue;
+        color: $White;
+      }
+    }
+  }
+}

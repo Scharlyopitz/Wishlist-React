@@ -41,4 +41,36 @@ header span {
 }
 header span:nth-child(2) {
   color: #088fbc;
+}
+
+main {
+  padding: 0 10px;
+}
+main form {
+  display: flex;
+  flex-direction: column;
+}
+main form div {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+main form label {
+  margin: 5px 0;
+}
+main form input {
+  border: 1px solid #b4b4b4;
+  outline: none;
+  padding: 10px;
+  font-size: 100%;
+}
+main form input[type=text] {
+  outline: none;
+  height: 35px;
+  font-size: 100%;
+}
+main form input[type=submit] {
+  margin: 10px 0;
+  background-color: #088fbc;
+  color: #ffffff;
 }/*# sourceMappingURL=style.css.map */
