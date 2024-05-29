@@ -4,7 +4,6 @@ export default function WishlistBanner() {
       <div>Title</div>
       <div>Link</div>
       <div>Description</div>
-      <div>Action</div>
     </div>
   );
 }
