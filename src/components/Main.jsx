@@ -72,7 +72,7 @@ export default function Main() {
         </div>
         <input
           type="submit"
-          value="Add !"
+          value="Submit"
           onClick={(e) => {
             e.preventDefault(), ClearInput(), Error();
           }}
