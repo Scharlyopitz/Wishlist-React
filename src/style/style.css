@@ -40,6 +40,10 @@ body p {
 .wishlistContainer .wishlistRow:nth-child(odd) {
   background-color: #eeeeee;
 }
+.wishlistContainer .ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .wishlistContainer .delete {
   background: #ff0000;
   color: #ffffff;

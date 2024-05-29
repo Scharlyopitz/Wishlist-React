@@ -15,14 +15,14 @@ export default function Wishlist({ list, setList }) {
         {list.map((obj, idx) => {
           return (
             <div className="wishlistRow" key={idx}>
-              <p>{obj.titleValue}</p>
+              <p className="ellipsis">{obj.titleValue}</p>
               <a href={obj.linkValue} target="_blank">
                 <FontAwesomeIcon
                   icon={faArrowUpRightFromSquare}
                   style={{ color: "#58b0f3" }}
                 />
               </a>
-              <p>{obj.descriptionValue}</p>
+              <p className="ellipsis">{obj.descriptionValue}</p>
               <span
                 className="delete"
                 onClick={() => {

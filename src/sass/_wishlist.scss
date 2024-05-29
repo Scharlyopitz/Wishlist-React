@@ -14,6 +14,11 @@
     }
   }
 
+  .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .delete {
     background: $Red;
     color: $White;
