@@ -9,6 +9,10 @@ export default function Main() {
 
   const [list, setList] = useState(getDatafromLS);
 
+  const [Message, setMessage] = useState("Click here to Add");
+  const ErrorMsg = "Complete all fields !";
+  const ValidMsg = "Added !";
+
   function ClearInput() {
     setTitleValue("");
     setLinkValue("");
@@ -30,10 +34,17 @@ export default function Main() {
 
   function Error() {
     if (titleValue == "" || linkValue == "" || descriptionValue == "") {
-      console.log("error");
+      setMessage(ErrorMsg);
+      setTimeout(function () {
+        setMessage("Click here to Add");
+      }, 1000);
     } else {
       const values = { titleValue, linkValue, descriptionValue };
       setList((ls) => [...ls, values]);
+      setMessage(ValidMsg);
+      setTimeout(function () {
+        setMessage("Click here to Add");
+      }, 1000);
     }
   }
 
@@ -71,8 +82,13 @@ export default function Main() {
           />
         </div>
         <input
+          style={{
+            background:
+              (Message === ErrorMsg && "#ff0000") ||
+              (Message === ValidMsg && "008000"),
+          }}
           type="submit"
-          value="Click here to Add"
+          value={Message}
           onClick={(e) => {
             e.preventDefault(), ClearInput(), Error();
           }}

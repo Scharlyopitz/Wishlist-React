@@ -27,6 +27,8 @@ body p {
 }
 
 .wishlistContainer {
+  height: 50vh;
+  overflow: scroll;
   text-align: start;
 }
 .wishlistContainer .wishlistRow {
