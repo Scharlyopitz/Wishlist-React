@@ -19,10 +19,18 @@ body p {
 .wishlistBanner {
   -moz-columns: 4;
        columns: 4;
-  background: blue;
+  padding: 10px;
+  border-bottom: 1px solid #b4b4b4;
+  border-top: 1px solid #b4b4b4;
+  text-align: start;
 }
 
+.wishlistContainer {
+  padding-left: 10px;
+  text-align: start;
+}
 .wishlistContainer .wishlistRow {
+  margin: 10px 0;
   position: relative;
   -moz-columns: 4;
        columns: 4;
@@ -33,8 +41,12 @@ body p {
   padding: 4px;
   width: 30px;
   display: inline-block;
+  text-align: center;
 }
 
+header {
+  margin-top: 40px;
+}
 header span {
   font-size: 15vw;
   font-weight: 100;

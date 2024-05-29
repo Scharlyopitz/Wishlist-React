@@ -1,5 +1,8 @@
 .wishlistContainer {
+  padding-left: 10px;
+  text-align: start;
   .wishlistRow {
+    margin: 10px 0;
     position: relative;
     columns: 4;
   }
@@ -10,5 +13,6 @@
     padding: 4px;
     width: 30px;
     display: inline-block;
+    text-align: center;
   }
 }

@@ -1,4 +1,7 @@
 .wishlistBanner {
   columns: 4;
-  background: blue;
+  padding: 10px;
+  border-bottom: 1px solid $Grey;
+  border-top: 1px solid $Grey;
+  text-align: start;
 }
