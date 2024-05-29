@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+
 export default function Wishlist({ list, setList }) {
   function deleteBook(titleValue) {
     const filteredList = list.filter((item) => {
@@ -14,7 +17,10 @@ export default function Wishlist({ list, setList }) {
             <div className="wishlistRow" key={idx}>
               <p>{obj.titleValue}</p>
               <a href={obj.linkValue} target="_blank">
-                clique
+                <FontAwesomeIcon
+                  icon={faArrowUpRightFromSquare}
+                  style={{ color: "#58b0f3" }}
+                />
               </a>
               <p>{obj.descriptionValue}</p>
               <span
