@@ -2,6 +2,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
+// URBANIST
+
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -10,11 +14,15 @@
 
 body {
   text-align: center;
-  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0a0909, #212121);
+  color: $White;
+  height: 100%;
 
   &,
   input {
-    font-family: "Roboto Condensed", sans-serif;
+    // font-family: "Roboto Condensed", sans-serif;
+    font-family: "Urbanist", sans-serif;
   }
 
   p {
