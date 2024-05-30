@@ -21,7 +21,7 @@ export default function Main() {
 
   return (
     <main>
-      <Form setList={setList} />
+      <Form list={list} setList={setList} />
       <WishlistBanner />
       <Wishlist list={list} setList={setList} />
     </main>

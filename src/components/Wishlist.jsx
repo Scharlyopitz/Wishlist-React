@@ -2,9 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 export default function Wishlist({ list, setList }) {
-  function deleteBook(titleValue) {
+  function deleteBook(listId) {
     const filteredList = list.filter((item) => {
-      return item.titleValue !== titleValue;
+      return item.listId !== listId;
     });
     setList(filteredList);
   }
@@ -26,7 +26,7 @@ export default function Wishlist({ list, setList }) {
               <span
                 className="delete"
                 onClick={() => {
-                  deleteBook(obj.titleValue);
+                  deleteBook(obj.listId);
                 }}
               >
                 X

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Form({ setList }) {
+export default function Form({ list, setList }) {
   const [Message, setMessage] = useState("Click here to Add");
   const ErrorMsg = "Complete all fields !";
   const ValidMsg = "Added !";
@@ -8,6 +8,7 @@ export default function Form({ setList }) {
   const [titleValue, setTitleValue] = useState("");
   const [linkValue, setLinkValue] = useState("");
   const [descriptionValue, setDescriptionValue] = useState("");
+  const listId = list.length.toString();
 
   function Error() {
     if (titleValue == "" || linkValue == "" || descriptionValue == "") {
@@ -16,7 +17,7 @@ export default function Form({ setList }) {
         setMessage("Click here to Add");
       }, 1000);
     } else {
-      const values = { titleValue, linkValue, descriptionValue };
+      const values = { listId, titleValue, linkValue, descriptionValue };
       setList((ls) => [...ls, values]);
       setTitleValue("");
       setLinkValue("");
