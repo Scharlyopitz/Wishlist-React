@@ -20,14 +20,21 @@ main {
     }
 
     input {
-      border: 1px solid $Grey;
+      border: 2px solid $Grey;
+      background-color: transparent;
+      color: $White;
       outline: none;
       padding: 10px;
       font-size: 100%;
+      border-radius: 10px;
+      transition: 0.2s;
+
+      &:focus {
+        border: 2px solid $White;
+      }
 
       &[type="text"] {
         outline: none;
-        height: 35px;
         font-size: 100%;
       }
 
@@ -36,7 +43,19 @@ main {
         font-weight: 200;
         background-color: $Blue;
         color: $White;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: $BlueBis;
+          border: 2px solid $White;
+        }
       }
     }
+  }
+}
+
+@media (min-width: 650px) {
+  main {
+    padding: 0 40px 20px 40px;
   }
 }

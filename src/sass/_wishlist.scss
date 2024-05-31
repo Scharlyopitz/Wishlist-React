@@ -1,6 +1,5 @@
 .wishlistContainer {
   flex-grow: 1;
-  overflow: scroll;
   overflow-x: hidden;
   text-align: start;
 
@@ -10,10 +9,14 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     padding: 10px;
-    border-bottom: 1px solid $Grey;
+    border-bottom: 2px solid $Grey;
 
     &:nth-child(odd) {
       background-color: $LightGrey;
+    }
+
+    a {
+      display: contents;
     }
   }
 
@@ -27,7 +30,17 @@
     color: $White;
     padding: 4px;
     width: 30px;
+    border-radius: 3px;
     display: inline-block;
     text-align: center;
+
+    &Container {
+      display: flex;
+      justify-content: center;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

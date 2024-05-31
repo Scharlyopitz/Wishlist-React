@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { AnimatePresence, animate, motion } from "framer-motion";
 
 export default function Wishlist({ list, setList }) {
   function deleteBook(listId) {
@@ -9,12 +10,47 @@ export default function Wishlist({ list, setList }) {
     setList(filteredList);
   }
 
+  const anime = (variants) => {
+    return {
+      initial: "initial",
+      animate: "animate",
+      exit: "exit",
+      variants,
+    };
+  };
+
+  const animWishlist = {
+    initial: {
+      opacity: 0,
+      y: "-100%",
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+    exit: {
+      opacity: 0,
+      x: "50%",
+      transition: {
+        duration: 0.2,
+      },
+    },
+  };
+
   return (
-    list.length > 0 && (
-      <div className="wishlistContainer">
+    <div className="wishlistContainer">
+      <AnimatePresence>
         {list.map((obj, idx) => {
           return (
-            <div className="wishlistRow" key={idx}>
+            <motion.div
+              {...anime(animWishlist)}
+              className="wishlistRow"
+              key={idx}
+            >
               <p className="ellipsis">{obj.titleValue}</p>
               <a href={obj.linkValue} target="_blank">
                 <FontAwesomeIcon
@@ -23,18 +59,20 @@ export default function Wishlist({ list, setList }) {
                 />
               </a>
               <p className="ellipsis">{obj.descriptionValue}</p>
-              <span
-                className="delete"
-                onClick={() => {
-                  deleteBook(obj.listId);
-                }}
-              >
-                X
-              </span>
-            </div>
+              <div className="deleteContainer">
+                <span
+                  className="delete"
+                  onClick={() => {
+                    deleteBook(obj.listId);
+                  }}
+                >
+                  X
+                </span>
+              </div>
+            </motion.div>
           );
         })}
-      </div>
-    )
+      </AnimatePresence>
+    </div>
   );
 }

@@ -64,8 +64,8 @@ export default function Form({ list, setList }) {
       <input
         style={{
           background:
-            (Message === ErrorMsg && "#ff0000") ||
-            (Message === ValidMsg && "#008000"),
+            (Message === ErrorMsg && "rgba(254 ,0 ,0, 70%)") ||
+            (Message === ValidMsg && "rgb(0, 128 ,0 , 70%)"),
         }}
         type="submit"
         value={Message}

@@ -7,6 +7,8 @@
 }
 
 body {
+  max-width: 1250px;
+  margin: auto;
   text-align: center;
   overflow: hidden;
   background: linear-gradient(180deg, #0a0909, #212121);
@@ -23,8 +25,8 @@ body p {
 
 .wishlistBanner {
   padding: 10px;
-  border-bottom: 1px solid #b4b4b4;
-  border-top: 1px solid #b4b4b4;
+  border-bottom: 2px solid #b4b4b4;
+  border-top: 2px solid #b4b4b4;
   text-align: start;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -33,7 +35,6 @@ body p {
 
 .wishlistContainer {
   flex-grow: 1;
-  overflow: scroll;
   overflow-x: hidden;
   text-align: start;
 }
@@ -43,10 +44,13 @@ body p {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   padding: 10px;
-  border-bottom: 1px solid #b4b4b4;
+  border-bottom: 2px solid #b4b4b4;
 }
 .wishlistContainer .wishlistRow:nth-child(odd) {
   background-color: #2a2a2a;
+}
+.wishlistContainer .wishlistRow a {
+  display: contents;
 }
 .wishlistContainer .ellipsis {
   overflow: hidden;
@@ -57,8 +61,16 @@ body p {
   color: #ffffff;
   padding: 4px;
   width: 30px;
+  border-radius: 3px;
   display: inline-block;
   text-align: center;
+}
+.wishlistContainer .deleteContainer {
+  display: flex;
+  justify-content: center;
+}
+.wishlistContainer .delete:hover {
+  cursor: pointer;
 }
 
 header {
@@ -70,7 +82,7 @@ header span {
   font-weight: 100;
 }
 header span:nth-child(2) {
-  color: #088fbc;
+  color: rgba(8, 143, 188, 0.7);
 }
 
 main {
@@ -93,19 +105,36 @@ main form label {
   margin: 5px 0;
 }
 main form input {
-  border: 1px solid #b4b4b4;
+  border: 2px solid #b4b4b4;
+  background-color: transparent;
+  color: #ffffff;
   outline: none;
   padding: 10px;
   font-size: 100%;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+main form input:focus {
+  border: 2px solid #ffffff;
 }
 main form input[type=text] {
   outline: none;
-  height: 35px;
   font-size: 100%;
 }
 main form input[type=submit] {
   margin: 15px 0;
   font-weight: 200;
-  background-color: #088fbc;
+  background-color: rgba(8, 143, 188, 0.7);
   color: #ffffff;
+  transition: 0.2s;
+}
+main form input[type=submit]:hover {
+  background-color: #088fbc;
+  border: 2px solid #ffffff;
+}
+
+@media (min-width: 650px) {
+  main {
+    padding: 0 40px 20px 40px;
+  }
 }/*# sourceMappingURL=style.css.map */
