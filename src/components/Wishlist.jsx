@@ -3,9 +3,9 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, animate, motion } from "framer-motion";
 
 export default function Wishlist({ list, setList }) {
-  function deleteBook(listId) {
+  function deleteBook(linkValue) {
     const filteredList = list.filter((item) => {
-      return item.listId !== listId;
+      return item.linkValue !== linkValue;
     });
     setList(filteredList);
   }
@@ -63,7 +63,7 @@ export default function Wishlist({ list, setList }) {
                 <span
                   className="delete"
                   onClick={() => {
-                    deleteBook(obj.listId);
+                    deleteBook(obj.linkValue);
                   }}
                 >
                   X

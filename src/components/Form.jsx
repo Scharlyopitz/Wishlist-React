@@ -8,7 +8,6 @@ export default function Form({ list, setList }) {
   const [titleValue, setTitleValue] = useState("");
   const [linkValue, setLinkValue] = useState("");
   const [descriptionValue, setDescriptionValue] = useState("");
-  const listId = list.length.toString();
 
   function Error() {
     if (titleValue == "" || linkValue == "" || descriptionValue == "") {
@@ -17,7 +16,7 @@ export default function Form({ list, setList }) {
         setMessage("Click here to Add");
       }, 1000);
     } else {
-      const values = { listId, titleValue, linkValue, descriptionValue };
+      const values = { titleValue, linkValue, descriptionValue };
       setList((ls) => [...ls, values]);
       setTitleValue("");
       setLinkValue("");
