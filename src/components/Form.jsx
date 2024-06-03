@@ -4,7 +4,7 @@ export default function Form({ list, setList }) {
   const BasicMsg = "Click here to Add";
   const ErrorMsg = "Complete all Fields !";
   const ValidMsg = "Added !";
-  const DuplicateLink = "Link already Added !";
+  const DuplicateMsg = "Link already Added !";
   const [Message, setMessage] = useState(BasicMsg);
 
   const [titleValue, setTitleValue] = useState("");
@@ -31,7 +31,7 @@ export default function Form({ list, setList }) {
   };
 
   const DuplicateForm = () => {
-    setMessage(DuplicateLink);
+    setMessage(DuplicateMsg);
     RefreshBasicMsg();
   };
 
@@ -95,7 +95,7 @@ export default function Form({ list, setList }) {
         style={{
           background:
             (Message === ErrorMsg && "rgba(254 ,0 ,0, 70%)") ||
-            (Message === DuplicateLink && "rgba(254 ,0 ,0, 70%)") ||
+            (Message === DuplicateMsg && "rgba(254 ,0 ,0, 70%)") ||
             (Message === ValidMsg && "rgb(0, 128 ,0 , 70%)"),
         }}
         type="submit"
