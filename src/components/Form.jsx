@@ -1,10 +1,11 @@
 import { useState } from "react";
 
 export default function Form({ list, setList }) {
-  const [Message, setMessage] = useState("Click here to Add");
+  const BasicMsg = "Click here to Add";
   const ErrorMsg = "Complete all Fields !";
   const ValidMsg = "Added !";
   const DuplicateLink = "Link already Added !";
+  const [Message, setMessage] = useState(BasicMsg);
 
   const [titleValue, setTitleValue] = useState("");
   const [linkValue, setLinkValue] = useState("");
@@ -16,29 +17,45 @@ export default function Form({ list, setList }) {
     listLinks.push(item.linkValue);
   });
 
-  const duplicateSearch = listLinks.find((el) => el == linkValue);
+  const DuplicateSearch = listLinks.find((el) => el == linkValue);
+
+  const RefreshBasicMsg = () => {
+    setTimeout(function () {
+      setMessage(BasicMsg);
+    }, 1000);
+  };
+
+  const ErrorForm = () => {
+    setMessage(ErrorMsg);
+    RefreshBasicMsg();
+  };
+
+  const DuplicateForm = () => {
+    setMessage(DuplicateLink);
+    RefreshBasicMsg();
+  };
+
+  const ClearInputs = () => {
+    setTitleValue("");
+    setLinkValue("");
+    setDescriptionValue("");
+  };
+
+  const ValidForm = () => {
+    const values = { titleValue, linkValue, descriptionValue };
+    setList((ls) => [...ls, values]);
+    ClearInputs();
+    setMessage(ValidMsg);
+    RefreshBasicMsg();
+  };
 
   function Error() {
     if (titleValue == "" || linkValue == "" || descriptionValue == "") {
-      setMessage(ErrorMsg);
-      setTimeout(function () {
-        setMessage("Click here to Add");
-      }, 1000);
-    } else if (duplicateSearch) {
-      setMessage(DuplicateLink);
-      setTimeout(function () {
-        setMessage("Click here to Add");
-      }, 1000);
+      ErrorForm();
+    } else if (DuplicateSearch) {
+      DuplicateForm();
     } else {
-      const values = { titleValue, linkValue, descriptionValue };
-      setList((ls) => [...ls, values]);
-      setTitleValue("");
-      setLinkValue("");
-      setDescriptionValue("");
-      setMessage(ValidMsg);
-      setTimeout(function () {
-        setMessage("Click here to Add");
-      }, 1000);
+      ValidForm();
     }
   }
 
