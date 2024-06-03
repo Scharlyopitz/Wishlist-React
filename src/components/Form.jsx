@@ -2,16 +2,30 @@ import { useState } from "react";
 
 export default function Form({ list, setList }) {
   const [Message, setMessage] = useState("Click here to Add");
-  const ErrorMsg = "Complete all fields !";
+  const ErrorMsg = "Complete all Fields !";
   const ValidMsg = "Added !";
+  const DuplicateLink = "Link already Added !";
 
   const [titleValue, setTitleValue] = useState("");
   const [linkValue, setLinkValue] = useState("");
   const [descriptionValue, setDescriptionValue] = useState("");
 
+  const listLinks = [];
+
+  list.map((item) => {
+    listLinks.push(item.linkValue);
+  });
+
+  const duplicateSearch = listLinks.find((el) => el == linkValue);
+
   function Error() {
     if (titleValue == "" || linkValue == "" || descriptionValue == "") {
       setMessage(ErrorMsg);
+      setTimeout(function () {
+        setMessage("Click here to Add");
+      }, 1000);
+    } else if (duplicateSearch) {
+      setMessage(DuplicateLink);
       setTimeout(function () {
         setMessage("Click here to Add");
       }, 1000);
@@ -64,6 +78,7 @@ export default function Form({ list, setList }) {
         style={{
           background:
             (Message === ErrorMsg && "rgba(254 ,0 ,0, 70%)") ||
+            (Message === DuplicateLink && "rgba(254 ,0 ,0, 70%)") ||
             (Message === ValidMsg && "rgb(0, 128 ,0 , 70%)"),
         }}
         type="submit"

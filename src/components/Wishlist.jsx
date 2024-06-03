@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { AnimatePresence, animate, motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Wishlist({ list, setList }) {
   function deleteBook(linkValue) {
